@@ -1,0 +1,75 @@
+Homework #1 (Due Feb 6, 2020)
+
+
+
+Please do these all in a python notebook that you can turn in via github. See the original repository for instructions for turning in HWs. Homeworks should be in your folder inside the `Students` folder. 
+
+
+
+1.  From elementary statistics, you know that the standard deviation
+
+    of the mean of N points drawn from a gaussian distribution is
+
+    sigma/sqrt(N), where sigma is the standard deviation of the parent
+
+    population.  Please write a python program to demonstrate this
+
+    with, for example, 1000 realizations of a gaussian distribution of
+
+    10000 numbers.  Use the np.random.rand() function in numpy to
+
+    produce the gaussian distribution.  Plot a histogram of the means. 
+
+
+
+
+
+2.  It is common in astronomy to combine a set of numbers with a
+
+    median instead of a mean.  Curiously, the median is a "noisier"
+
+    statistic than the mean.  Modify your program to compute the
+
+    standard deviation of the median of a gaussian distribution.  Plot
+
+    a histogram of the medians.  Plot the histogram of the means and
+
+    overplot the histogram of the medians.  There are various ways to
+
+    plot both in the same panel, take your pick.
+
+
+
+2(b)  (extra credit)  Calculate analytically the ratio of the two
+
+    previous answers - i.e. by what factor is the stdev of the median
+
+    larger than the stdev of the mean?
+
+
+
+
+
+3.  On a different topic, write a function called "points" that take
+
+    one parameter, N, returns an image with N points drawn from a
+
+    Gaussian centered at the center of the image.  Use plot range
+
+    [-6,6] in both dimensions, and sigma=1 for the gaussian.  This
+
+    will "simulate" photons from a star hitting a detector.  Now add a
+
+    sky background that also has N photons with a uniform spatial
+
+    distribution (so use np.random.random() but scale it so it goes
+
+    [-6,6] instead of [0,1]).  Run the program for N=1000 or several
+
+    thousand.
+
+    Show the image you populate with these "photons" with plt.imshow()
+
+    (or whatever). 
+
+
