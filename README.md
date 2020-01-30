@@ -1,5 +1,7 @@
 # Astronomy 100 (Spring 2020)
+The is the best-est class ever!!!
 
+Humph. Let's test a conflict.
 Class will be held Tuesday and Thursday in the Science Center Room 804 (FAS) from 3.00pm to 4.45pm. Notes and materials will be posted to this repository. Office hours will take place after class.
 
 
