@@ -1,0 +1,8 @@
+pwd - print current directory
+cd - change directory
+ls - list current directory
+mkdir - make directory
+touch - create file
+cat - toss out all the info in a file into terminal
+
+open .
