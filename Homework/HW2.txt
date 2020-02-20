@@ -1,0 +1,88 @@
+Ay 100
+Homework 2   Due Feb 20
+
+This week we continue assembling pieces of an image reduction
+pipeline, and compare to other measurements.
+
+Take the image we have been using
+
+PTF_201307021787_i_p_scie_t041723_u016616794_f02_p003486_c11.fits
+
+and examine the header, looking for the World Coordinate System
+information.  This is in human-readable form in the header of the
+file, so you can even type
+more PTF_201307021787_i_p_scie_t041723_u016616794_f02_p003486_c11.fits
+
+and scroll down until you see this
+
+WCSAXES =                    2 / Number of axes in world coordinate system      
+CRVAL1  =     217.309490953823 / [deg] RA of reference point                    
+CRVAL2  =     16.6581466832508 / [deg] DEC of reference point                   
+CRPIX1  =             1497.193 / [pix] Image reference point                    
+CRPIX2  =             609.3031 / [pix] Image reference point                    
+CTYPE1  = 'RA---TAN-SIP'       / TAN (gnomic) projection + SIP distortions      
+CTYPE2  = 'DEC--TAN-SIP'       / TAN (gnomic) projection + SIP distortions      
+CUNIT1  = 'deg     '           / Image axis-1 celestial-coordinate units        
+CUNIT2  = 'deg     '           / Image axis-2 celestial-coordinate units        
+CRTYPE1 = 'deg     '           / Data units of CRVAL1                           
+CRTYPE2 = 'deg     '           / Data units of CRVAL2                           
+CD1_1   = 0.000280377484830748 / Transformation matrix                          
+CD1_2   = -1.71606271442079E-06                                                 
+CD2_1   = -1.61073877029747E-06                                                 
+CD2_2   = -0.000280943199913645                                                 
+
+This tells you that (x,y)= (1497.193, 609.3031) is the reference point
+in the image (the tangent point on the celestial sphere) and that that
+point corresponds to (RA, dec) = (217.309, 16.658).
+
+The pixel scale is about 0.000280 deg/pixel. 
+
+Read about the astropy WCS package
+
+https://docs.astropy.org/en/stable/wcs/
+
+focusing for now on wcs_pix2world()
+
+
+1.  What is the difference between wcs_pix2world() and all_pix2world() ?
+
+2.  What is a SIP convention for representing distortions (in one sentence)?
+
+Now let's have a look at the Gaia archive.  If you are unfamiliar with
+Gaia, please read
+https://sci.esa.int/web/gaia/-/28820-summary
+
+If you already know about Gaia, you can jump straight here
+https://gea.esac.esa.int/archive/
+and click on "Search"
+
+Please query objects within a radius of 15 arcminutes of 
+
+RA = 217.309, dec = 16.658   (J2000 ICRS coordinates)
+
+and download this file as a FITS file.
+If you are unsure how to read a FITS binary table, this may help
+https://docs.astropy.org/en/stable/io/fits/
+
+Next convert those (RA, dec) coordinates to (x,y) pixel coordinates in
+our image.
+
+Overplot them as circles of an appropriate size, maybe
+with transparency 0.5, on the image.  Does the astrometry look right?
+
+FITS headers have a 1-indexed convention, and Python is 0-indexed.  Is
+that OK?
+
+
+In class, we write a "findstar" function to find stars in an image,
+and then we also used DAOFind.
+
+Please run those on the image, and make a scatterplot with symbols for
+findstar, DAOFind, and the Gaia (x,y) positions.  We want to be able
+to see any offsets, so maybe zoom in on some interesting region of the
+X and Y range rather than plotting the entire thing.  Do the 3 ways of
+finding star positions seem to line up?
+
+
+Please take a stab at this before Tuesday, and then we'll be happy to
+stay after class and talk through pieces of this with you.
